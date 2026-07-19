@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023"],
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+    "rootDir": ".",
+    "outDir": "dist",
+    "strict": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "noCheck": true,
+    "sourceMap": false,
+    "declaration": false,
+    "noEmit": false
+  },
+  "include": ["server/src/**/*.ts", "src/lib/uuid.ts"],
+  "exclude": ["node_modules", "dist"]
+}
