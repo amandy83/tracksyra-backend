@@ -41,6 +41,7 @@ export function loadRuntimeEnv() {
 export function logAndRequireStartupEnvironment() {
     const required = ["DATABASE_URL", "SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"];
     const missing = [];
+    console.log("process.env keys:", Object.keys(process.env));
     for (const name of required) {
         const present = hasValue(process.env[name]);
         console.log(`${name}: ${present ? "PRESENT" : "MISSING"}`);
