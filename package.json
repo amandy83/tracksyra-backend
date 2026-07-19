@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "postbuild": "node scripts/patch-compiled-backend.cjs",
-    "start": "node dist/server/src/bootstrap/startServer.js",
+    "start": "node server.js",
     "worker": "node dist/server/src/workers/bootstrap/startWorkers.js"
   },
   "dependencies": {
