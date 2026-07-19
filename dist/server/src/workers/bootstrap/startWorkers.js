@@ -1,9 +1,10 @@
-import { loadRuntimeEnv, logRuntimeEnv } from "../../config/envLoader.js";
+import { loadRuntimeEnv, logAndRequireStartupEnvironment, logRuntimeEnv } from "../../config/envLoader.js";
 import { logFfmpegRuntime } from "../../media/services/ffmpeg.js";
 import { startOperationsServer } from "../../http/operationsServer.js";
 import { createDistributionBootstrapDependencies } from "../../distribution/composition/compositionRoot.js";
 export async function startWorkers() {
     loadRuntimeEnv();
+    logAndRequireStartupEnvironment();
     logRuntimeEnv("worker-bootstrap");
     logFfmpegRuntime("worker-bootstrap");
     const bootstrap = await createDistributionBootstrapDependencies();

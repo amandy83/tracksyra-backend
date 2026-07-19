@@ -1,11 +1,12 @@
 import type { WorkerRuntime } from "../runtime/workerRuntime";
-import { loadRuntimeEnv, logRuntimeEnv } from "../../config/envLoader";
+import { loadRuntimeEnv, logAndRequireStartupEnvironment, logRuntimeEnv } from "../../config/envLoader";
 import { logFfmpegRuntime } from "../../media/services/ffmpeg";
 import { startOperationsServer } from "../../http/operationsServer";
 import { createDistributionBootstrapDependencies } from "../../distribution/composition/compositionRoot";
 
 export async function startWorkers(): Promise<WorkerRuntime> {
   loadRuntimeEnv();
+  logAndRequireStartupEnvironment();
   logRuntimeEnv("worker-bootstrap");
   logFfmpegRuntime("worker-bootstrap");
 

@@ -51,6 +51,21 @@ export function loadRuntimeEnv(): EnvLoadResult {
   return result;
 }
 
+export function logAndRequireStartupEnvironment() {
+  const required = ["DATABASE_URL", "SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"] as const;
+  const missing: string[] = [];
+
+  for (const name of required) {
+    const present = hasValue(process.env[name]);
+    console.log(`${name}: ${present ? "PRESENT" : "MISSING"}`);
+    if (!present) missing.push(name);
+  }
+
+  if (missing.length > 0) {
+    throw new Error(`Startup environment check failed. Missing required variables: ${missing.join(", ")}`);
+  }
+}
+
 export function logRuntimeEnv(component: string) {
   const loadedEnv = loadRuntimeEnv();
   const log = getConsole();
