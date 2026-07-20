@@ -1,4 +1,5 @@
-import { QueryTypes } from "sequelize";
+import sequelize from "sequelize";
+const { QueryTypes } = sequelize;
 import { validatePayoutTransition } from "../core/payoutStateMachine.js";
 export class PayoutService {
     deps;

@@ -1,4 +1,5 @@
-import { QueryTypes } from "sequelize";
+import sequelize from "sequelize";
+const { QueryTypes } = sequelize;
 /**
  * Phase C MVP: history is approximated as current record snapshot.
  * (Audit log / event table can be added in later phases.)

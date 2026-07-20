@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
-import { QueryTypes } from "sequelize";
+import sequelize from "sequelize";
+const { QueryTypes } = sequelize;
 export class PayoutRequestService {
     deps;
     constructor(deps) {

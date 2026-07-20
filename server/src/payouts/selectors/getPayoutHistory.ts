@@ -1,5 +1,7 @@
 import type { Sequelize } from "sequelize";
-import { QueryTypes } from "sequelize";
+import sequelize from "sequelize";
+
+const { QueryTypes } = sequelize;
 import type { PayoutId, PayoutRecord } from "../models/payoutTypes";
 
 export type GetPayoutHistoryInput = {

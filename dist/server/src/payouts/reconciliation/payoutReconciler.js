@@ -1,4 +1,5 @@
-import { QueryTypes } from "sequelize";
+import sequelize from "sequelize";
+const { QueryTypes } = sequelize;
 export async function reconcilePayouts(deps) {
     // Phase C MVP: deterministic self-check against state machine constraints.
     // No ledger writes.

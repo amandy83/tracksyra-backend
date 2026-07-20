@@ -1,5 +1,7 @@
-import { QueryTypes, Sequelize } from "sequelize";
+import sequelize from "sequelize";
 import type { SqlExecutor } from "./distributionStore";
+
+const { QueryTypes, Sequelize } = sequelize;
 
 export class SequelizeSqlExecutor implements SqlExecutor {
   constructor(private sequelize: Sequelize) {}

@@ -1,6 +1,9 @@
 import { v4 as uuidv4 } from "uuid";
 
-import { QueryTypes, type Sequelize } from "sequelize";
+import sequelize from "sequelize";
+import type { Sequelize } from "sequelize";
+
+const { QueryTypes } = sequelize;
 
 import type { PayoutEntityType, PayoutId, PayoutRequestEventId, PayoutRecord, PayoutRequestInput, PayoutState } from "../models/payoutTypes";
 

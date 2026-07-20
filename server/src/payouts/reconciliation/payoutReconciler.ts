@@ -1,5 +1,7 @@
 import type { Sequelize } from "sequelize";
-import { QueryTypes } from "sequelize";
+import sequelize from "sequelize";
+
+const { QueryTypes } = sequelize;
 
 export type PayoutReconcilerDeps = {
   sequelize: Sequelize;

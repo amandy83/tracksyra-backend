@@ -1,4 +1,7 @@
-import { QueryTypes, type Sequelize } from "sequelize";
+import sequelize from "sequelize";
+import type { Sequelize } from "sequelize";
+
+const { QueryTypes } = sequelize;
 
 import type { PayoutId } from "../models/payoutTypes";
 import type { PayoutState } from "../models/payoutEnums";

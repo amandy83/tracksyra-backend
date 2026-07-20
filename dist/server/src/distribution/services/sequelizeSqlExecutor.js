@@ -1,4 +1,5 @@
-import { QueryTypes, Sequelize } from "sequelize";
+import sequelize from "sequelize";
+const { QueryTypes, Sequelize } = sequelize;
 export class SequelizeSqlExecutor {
     sequelize;
     constructor(sequelize) {
